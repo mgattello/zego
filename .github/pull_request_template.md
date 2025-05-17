@@ -1,4 +1,4 @@
-# [Ticket-](https://trello.com/)
+# [Ticket-](https://github.com/mgattello/zego/issues/)
 
 ## Checklist
 
