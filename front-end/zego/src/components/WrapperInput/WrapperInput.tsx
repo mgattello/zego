@@ -1,3 +1,4 @@
+import { DataTestType } from '@/types/DataTestType';
 import { SetStateAction } from 'react';
 
 export enum InputType {
@@ -34,9 +35,8 @@ export type WrapperInputProps = {
     inputType: InputType;
     inputListId?: string;
     inputList?: string[];
-    inputDataTestId?: string;
     onChangeFx: () => React.Dispatch<SetStateAction<string>>;
-};
+} & DataTestType;
 
 export default function WrapperInput({
     id,
@@ -47,7 +47,7 @@ export default function WrapperInput({
     inputType,
     inputListId,
     inputList,
-    inputDataTestId = 'test',
+    dataTestId = 'test',
     onChangeFx,
 }: WrapperInputProps) {
     return (
@@ -62,10 +62,14 @@ export default function WrapperInput({
                 required={required}
                 value={inputValue}
                 onChange={onChangeFx}
-                data-testid={`wrapper-input-${inputDataTestId}`}
+                data-testid={`wrapper-input-${dataTestId}`}
             />
             {inputListId && inputList ? (
-                <datalist id={inputListId} data-testid={`wrapper-input-datalist-${inputDataTestId}`} className='w-full bg-white'>
+                <datalist
+                    id={inputListId}
+                    data-testid={`wrapper-input-datalist-${dataTestId}`}
+                    className="w-full bg-white"
+                >
                     {inputList.map((option, index) => (
                         <option value={option} key={`wrapper-input-option-${inputListId}-${index}`} />
                     ))}

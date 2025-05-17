@@ -32,7 +32,7 @@ function TestWrapperInputList() {
             inputValue={inputTestValue}
             inputType={InputType['Text']}
             inputListId="tests"
-            inputDataTestId="list-test"
+            dataTestId="list-test"
             inputList={inputList}
             onChangeFx={() => setInputTestValue}
         />
