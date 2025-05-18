@@ -1,11 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import WrapperInput, { InputTypeEnum } from './WrapperInput';
-import { ChangeEvent, useState } from 'react';
-import { TestWrapperInput } from '../../utils/testHelpers';
 
 function TestWrapperInputList() {
-    const [inputTestValue, setInputTestValue] = useState('');
     const inputList = ['test 1', 'test 2', 'test 3'];
 
     return (
@@ -14,19 +11,25 @@ function TestWrapperInputList() {
             inputPlaceHolder="Test"
             inputName="test"
             required={true}
-            inputValue={inputTestValue}
             inputType={InputTypeEnum['Text']}
             inputListId="tests"
             dataTestId="list-test"
             inputList={inputList}
-            onChangeFx={(e: ChangeEvent<HTMLInputElement>) => setInputTestValue(e.target.value)}
         />
     );
 }
 
 describe('WrapperInput', () => {
     it('renders the input', () => {
-        render(<TestWrapperInput />);
+        render(
+            <WrapperInput
+                id="input-test"
+                inputPlaceHolder="Test"
+                inputName="test"
+                required={true}
+                inputType={InputTypeEnum['Text']}
+            />,
+        );
         const component = screen.getByTestId('wrapper-input-test');
 
         expect(component).toBeInTheDocument();

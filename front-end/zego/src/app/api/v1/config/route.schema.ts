@@ -1,5 +1,4 @@
 import { ButtonTypeEnum } from '../../../../components/WrapperButton/WrapperButton';
-import { AutoCompleteEnum } from '../../../../components/WrapperForm/WrapperForm';
 import { InputTypeEnum } from '../../../../components/WrapperInput/WrapperInput';
 import { z } from 'zod';
 
@@ -36,6 +35,7 @@ const ButtonPropertiesZodBase = z.object({
     formId: z.string().optional(),
     buttonType: ButtonTypeEnumZod,
     buttonName: z.string().optional(),
+    buttonText: z.string(),
 });
 
 const ButtonPropertiesZod = ButtonPropertiesZodBase.merge(AriaPropertiesZod);
@@ -59,12 +59,10 @@ const ChildComponentZod = z.discriminatedUnion('type', [InputComponentZod, Butto
 
 const FormLayoutZod = z.array(ChildComponentZod);
 
-const AutoCompleteEnumZod = z.enum(Object.values(AutoCompleteEnum) as [string, ...string[]]);
-
 const FormZod = z.object({
     id: z.string(),
     formName: z.string().optional(),
-    autoComplete: AutoCompleteEnumZod,
+    title: z.string().optional(),
     layout: FormLayoutZod,
 });
 
@@ -72,5 +70,9 @@ export const ConfigGetZodSchema = z.object({
     version: z.string().regex(/^\d+\.\d+\.\d+$/, {
         message: 'Version must be in format X.Y.Z (i.e. 1.0.0)',
     }),
-    config: FormZod,
+    form: FormZod,
 });
+
+export type ButtonComponentType = z.infer<typeof ButtonComponentZod>;
+export type LabelComponentType = z.infer<typeof LabelComponentZod>;
+export type InputComponentType = z.infer<typeof InputComponentZod>;
