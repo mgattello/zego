@@ -1,0 +1,76 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "onboarding;user-completes-onboarding-form-to-get-an-insurance-quote",
+        "keyword": "Scenario",
+        "line": 2,
+        "name": "User completes onboarding form to get an insurance quote",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "I visit the home page",
+            "match": {
+              "location": "file:/Users/marcogattello/Documents/code/engineer-hiring-tech-exercise/front-end/zego/tests/acceptance/steps/onboarding.steps.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 886461667
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 4,
+            "name": "I click on the 'car-insurance' radio input",
+            "match": {
+              "location": "file:/Users/marcogattello/Documents/code/engineer-hiring-tech-exercise/front-end/zego/tests/acceptance/steps/onboarding.steps.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 91666917
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "I click on the Get quote button",
+            "match": {
+              "location": "file:/Users/marcogattello/Documents/code/engineer-hiring-tech-exercise/front-end/zego/tests/acceptance/steps/onboarding.steps.ts:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 36274957
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "I should see results logged",
+            "match": {
+              "location": "file:/Users/marcogattello/Documents/code/engineer-hiring-tech-exercise/front-end/zego/tests/acceptance/steps/onboarding.steps.ts:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2135426000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "onboarding",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Onboarding",
+    "tags": [],
+    "uri": "tests/acceptance/features/onboardig.feature"
+  }
+]
