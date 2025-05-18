@@ -9,9 +9,9 @@ describe('WrapperButton', () => {
                 Test
             </WrapperButton>,
         );
-        const input = screen.getByTestId('wrapper-button-test');
+        const component = screen.getByTestId('wrapper-button-test');
 
-        expect(input).toBeInTheDocument();
-        expect(input).toHaveTextContent('Test');
+        expect(component).toBeInTheDocument();
+        expect(component).toHaveTextContent('Test');
     });
 });

@@ -42,10 +42,10 @@ function TestWrapperInputList() {
 describe('WrapperInput', () => {
     it('renders the input', () => {
         render(<TestWrapperInput />);
-        const input = screen.getByTestId('wrapper-input-test');
+        const component = screen.getByTestId('wrapper-input-test');
 
-        expect(input).toBeInTheDocument();
-        expect(input).toHaveAttribute('placeholder', 'Test');
+        expect(component).toBeInTheDocument();
+        expect(component).toHaveAttribute('placeholder', 'Test');
     });
 
     it('renders the input with list', () => {
