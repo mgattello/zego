@@ -1,23 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import WrapperInput, { InputTypeEnum } from './WrapperInput';
-import { useState } from 'react';
-
-function TestWrapperInput() {
-    const [inputTestValue, setInputTestValue] = useState('');
-
-    return (
-        <WrapperInput
-            id="test"
-            inputPlaceHolder="Test"
-            inputName="test"
-            required={true}
-            inputValue={inputTestValue}
-            inputType={InputTypeEnum['Text']}
-            onChangeFx={() => setInputTestValue}
-        />
-    );
-}
+import { ChangeEvent, useState } from 'react';
+import { TestWrapperInput } from '../../utils/testHelpers';
 
 function TestWrapperInputList() {
     const [inputTestValue, setInputTestValue] = useState('');
@@ -34,7 +19,7 @@ function TestWrapperInputList() {
             inputListId="tests"
             dataTestId="list-test"
             inputList={inputList}
-            onChangeFx={() => setInputTestValue}
+            onChangeFx={(e: ChangeEvent<HTMLInputElement>) => setInputTestValue(e.target.value)}
         />
     );
 }

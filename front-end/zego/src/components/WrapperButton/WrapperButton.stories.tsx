@@ -14,9 +14,9 @@ export default {
 } as Meta<typeof WrapperButton>;
 
 const Template: StoryFn<React.ComponentProps<typeof WrapperButton>> = (args) => <WrapperButton {...args} />;
-export const ButtonText = Template.bind({});
+export const ButtonPrimary = Template.bind({});
 
-ButtonText.args = {
+ButtonPrimary.args = {
     id: 'submit',
     children: 'Submit',
 };

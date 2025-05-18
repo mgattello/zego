@@ -1,6 +1,6 @@
-import { AriaLabelProps } from '@/types/AriaLabelProps';
+import { AriaProps } from '@/types/AriaProps';
 import { DataTestProps } from '@/types/DataTestType';
-import { SetStateAction } from 'react';
+import { ChangeEvent } from 'react';
 
 export enum InputTypeEnum {
     Text = 'text',
@@ -32,13 +32,13 @@ export type WrapperInputProps = {
     inputPlaceHolder?: string;
     inputName: string;
     required: boolean;
-    inputValue: string;
+    inputValue: string | number | undefined;
     inputType: InputTypeEnum;
     inputListId?: string;
     inputList?: string[];
-    onChangeFx: () => React.Dispatch<SetStateAction<string>>;
+    onChangeFx: (event: ChangeEvent<HTMLInputElement>) => void;
 } & DataTestProps &
-    AriaLabelProps;
+    AriaProps;
 
 export default function WrapperInput({
     id,
