@@ -1,9 +1,9 @@
 import { Meta, StoryFn } from '@storybook/react';
-import WrapperInput, { InputTypeEnum } from './WrapperInput';
+import WrapperButton, { InputType } from './WrapperButton';
 
 export default {
     title: 'Components/WrapperInput',
-    component: WrapperInput,
+    component: WrapperButton,
     parameters: {
         docs: {
             description: {
@@ -11,9 +11,9 @@ export default {
             },
         },
     },
-} as Meta<typeof WrapperInput>;
+} as Meta<typeof WrapperButton>;
 
-const Template: StoryFn<React.ComponentProps<typeof WrapperInput>> = (args) => <WrapperInput {...args} />;
+const Template: StoryFn<React.ComponentProps<typeof WrapperButton>> = (args) => <WrapperButton {...args} />;
 
 export const InputText = Template.bind({});
 export const InputPassword = Template.bind({});
@@ -26,47 +26,47 @@ export const InputTime = Template.bind({});
 export const InputWeek = Template.bind({});
 
 InputText.args = {
-    inputType: InputTypeEnum.Text,
+    inputType: InputType.Text,
 };
 
 InputPassword.args = {
-    inputType: InputTypeEnum.Password,
+    inputType: InputType.Password,
 };
 
 InputList.args = {
-    inputType: InputTypeEnum.Text,
+    inputType: InputType.Text,
     inputListId: 'test-list',
     inputList: ['test 1', 'test 2', 'test 3'],
 };
 
 InputCheckbox.args = {
-    inputType: InputTypeEnum.Checkbox,
+    inputType: InputType.Checkbox,
 };
 
 InputFile.args = {
-    inputType: InputTypeEnum.Date,
+    inputType: InputType.Date,
 };
 
 InputFile.args = {
-    inputType: InputTypeEnum.Date,
+    inputType: InputType.Date,
 };
 
 InputFile.args = {
-    inputType: InputTypeEnum.File,
+    inputType: InputType.File,
 };
 
 InputNumber.args = {
-    inputType: InputTypeEnum.Number,
+    inputType: InputType.Number,
 };
 
 InputRadio.args = {
-    inputType: InputTypeEnum.Radio,
+    inputType: InputType.Radio,
 };
 
 InputTime.args = {
-    inputType: InputTypeEnum.Time,
+    inputType: InputType.Time,
 };
 
 InputWeek.args = {
-    inputType: InputTypeEnum.Week,
+    inputType: InputType.Week,
 };

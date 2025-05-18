@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import WrapperInput, { InputType } from './WrapperInput';
+import WrapperInput, { InputTypeEnum } from './WrapperInput';
 import { useState } from 'react';
 
 function TestWrapperInput() {
@@ -13,7 +13,7 @@ function TestWrapperInput() {
             inputName="test"
             required={true}
             inputValue={inputTestValue}
-            inputType={InputType['Text']}
+            inputType={InputTypeEnum['Text']}
             onChangeFx={() => setInputTestValue}
         />
     );
@@ -30,7 +30,7 @@ function TestWrapperInputList() {
             inputName="test"
             required={true}
             inputValue={inputTestValue}
-            inputType={InputType['Text']}
+            inputType={InputTypeEnum['Text']}
             inputListId="tests"
             dataTestId="list-test"
             inputList={inputList}
