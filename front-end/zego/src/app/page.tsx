@@ -17,7 +17,7 @@ export default async function Home() {
                 <Image src="/zego.svg" alt="Zego logo" width={100} height={100} priority />
             </div>
             <Suspense fallback={<div>Loading...</div>}>
-                {data ? (
+                {data && data.form ? (
                     <section className="flex flex-col w-[550px] gap-10">
                         <h1 className="text-5xl font-bold">{data.form.title}</h1>
                         <hr className="border-t-1 opacity-10" />
@@ -87,7 +87,7 @@ export default async function Home() {
                         </WrapperForm>
                     </section>
                 ) : (
-                    <></>
+                    <>Form Not Found!</>
                 )}
             </Suspense>
         </main>
