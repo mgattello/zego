@@ -1,5 +1,5 @@
 import { Meta, StoryFn } from '@storybook/react';
-import WrapperInput, { InputType } from './WrapperInput';
+import WrapperInput, { InputTypeEnum } from './WrapperInput';
 
 export default {
     title: 'Components/WrapperInput',
@@ -26,47 +26,47 @@ export const InputTime = Template.bind({});
 export const InputWeek = Template.bind({});
 
 InputText.args = {
-    inputType: InputType.Text,
+    inputType: InputTypeEnum.Text,
 };
 
 InputPassword.args = {
-    inputType: InputType.Password,
+    inputType: InputTypeEnum.Password,
 };
 
 InputList.args = {
-    inputType: InputType.Text,
+    inputType: InputTypeEnum.Text,
     inputListId: 'test-list',
     inputList: ['test 1', 'test 2', 'test 3'],
 };
 
 InputCheckbox.args = {
-    inputType: InputType.Checkbox,
+    inputType: InputTypeEnum.Checkbox,
 };
 
 InputFile.args = {
-    inputType: InputType.Date,
+    inputType: InputTypeEnum.Date,
 };
 
 InputFile.args = {
-    inputType: InputType.Date,
+    inputType: InputTypeEnum.Date,
 };
 
 InputFile.args = {
-    inputType: InputType.File,
+    inputType: InputTypeEnum.File,
 };
 
 InputNumber.args = {
-    inputType: InputType.Number,
+    inputType: InputTypeEnum.Number,
 };
 
 InputRadio.args = {
-    inputType: InputType.Radio,
+    inputType: InputTypeEnum.Radio,
 };
 
 InputTime.args = {
-    inputType: InputType.Time,
+    inputType: InputTypeEnum.Time,
 };
 
 InputWeek.args = {
-    inputType: InputType.Week,
+    inputType: InputTypeEnum.Week,
 };

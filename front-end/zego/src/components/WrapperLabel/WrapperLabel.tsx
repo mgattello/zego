@@ -1,9 +1,11 @@
-import { DataTestType } from '@/types/DataTestType';
+import { AriaLabelProps } from '@/types/AriaLabelProps';
+import { DataTestProps } from '@/types/DataTestType';
 import { PropsWithChildren } from 'react';
 
 export type WrapperLabelProps = {
     labelFor: string;
-} & DataTestType;
+} & DataTestProps &
+    AriaLabelProps;
 
 export default function WrapperLabel({
     labelFor,

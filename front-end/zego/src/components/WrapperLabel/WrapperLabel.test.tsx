@@ -5,9 +5,9 @@ import WrapperLabel from './WrapperLabel';
 describe('WrapperLabel', () => {
     it('renders the label', () => {
         render(<WrapperLabel labelFor="test">Test</WrapperLabel>);
-        const input = screen.getByTestId('wrapper-label-test');
+        const component = screen.getByTestId('wrapper-label-test');
 
-        expect(input).toBeInTheDocument();
-        expect(input).toHaveTextContent('Test');
+        expect(component).toBeInTheDocument();
+        expect(component).toHaveTextContent('Test');
     });
 });

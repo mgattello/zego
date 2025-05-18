@@ -1,7 +1,8 @@
-import { DataTestType } from '@/types/DataTestType';
+import { AriaLabelProps } from '@/types/AriaLabelProps';
+import { DataTestProps } from '@/types/DataTestType';
 import { SetStateAction } from 'react';
 
-export enum InputType {
+export enum InputTypeEnum {
     Text = 'text',
     Password = 'password',
     Email = 'email',
@@ -32,11 +33,12 @@ export type WrapperInputProps = {
     inputName: string;
     required: boolean;
     inputValue: string;
-    inputType: InputType;
+    inputType: InputTypeEnum;
     inputListId?: string;
     inputList?: string[];
     onChangeFx: () => React.Dispatch<SetStateAction<string>>;
-} & DataTestType;
+} & DataTestProps &
+    AriaLabelProps;
 
 export default function WrapperInput({
     id,
@@ -48,6 +50,9 @@ export default function WrapperInput({
     inputListId,
     inputList,
     dataTestId = 'test',
+    ariaLabelledBy,
+    ariaDescribedBy,
+    ariaLabel,
     onChangeFx,
 }: WrapperInputProps) {
     return (
@@ -62,6 +67,9 @@ export default function WrapperInput({
                 required={required}
                 value={inputValue}
                 onChange={onChangeFx}
+                aria-labelledby={ariaLabelledBy}
+                aria-describedby={ariaDescribedBy}
+                aria-label={ariaLabel}
                 data-testid={`wrapper-input-${dataTestId}`}
             />
             {inputListId && inputList ? (
