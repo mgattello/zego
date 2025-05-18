@@ -1,6 +1,5 @@
-/** @type {import('ts-jest').JestConfigWithTsJest} */
-module.exports = {
-  preset: 'ts-jest',
+const config = {
+  preset: 'ts-jest/presets/js-with-ts-esm',
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   moduleNameMapper: {
@@ -8,3 +7,5 @@ module.exports = {
   },
   testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
 };
+
+export default config;
