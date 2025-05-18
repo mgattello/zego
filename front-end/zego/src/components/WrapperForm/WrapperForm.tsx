@@ -2,7 +2,7 @@ import { AriaProps } from '@/types/AriaProps';
 import { DataTestProps } from '@/types/DataTestType';
 import { PropsWithChildren } from 'react';
 
-enum AutoCompleteEnum {
+export enum AutoCompleteEnum {
     On = 'on',
     Off = 'off',
 }

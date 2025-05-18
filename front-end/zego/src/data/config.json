@@ -1,0 +1,61 @@
+{
+    "version": "1.0.0",
+    "config": {
+        "id": "form-insurance",
+        "formName": "onboardingQuote",
+        "autoComplete": "on",
+        "layout": [
+            {
+                "type": "label",
+                "properties": {
+                    "labelFor": "car-insurance",
+                    "labelText": "Car insurance"
+                }
+            },
+            {
+                "type": "input",
+                "properties": {
+                    "id": "car-insurance",
+                    "inputName": "car-insurance",
+                    "inputType": "radio",
+                    "propertiesOf": "input",
+                    "required": true
+                }
+            },
+            {
+                "type": "label",
+                "properties": {
+                    "labelFor": "car-deliver-insurance",
+                    "labelText": "Car delivery insurance"
+                }
+            },
+            {
+                "type": "input",
+                "properties": {
+                    "id": "car-deliver-insurance",
+                    "inputName": "car-deliver-insurance",
+                    "inputType": "radio",
+                    "propertiesOf": "input",
+                    "required": true
+                }
+            },
+            {
+                "type": "label",
+                "properties": {
+                    "labelFor": "private-hire-insurance",
+                    "labelText": "Private hire insurance"
+                }
+            },
+            {
+                "type": "input",
+                "properties": {
+                    "id": "private-hire-insurance",
+                    "inputName": "private-hire-insurance",
+                    "inputType": "radio",
+                    "propertiesOf": "input",
+                    "required": true
+                }
+            }
+        ]
+    }
+}
