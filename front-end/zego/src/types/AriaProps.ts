@@ -1,4 +1,4 @@
-export type AriaLabelProps = {
+export type AriaProps = {
     /**
      * <input>: use it instead of a <label> when you're using non-standard layouts or custom UI that makes <label for="..."> impractical.
      *

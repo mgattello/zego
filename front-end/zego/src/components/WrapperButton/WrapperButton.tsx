@@ -1,6 +1,6 @@
-import { AriaLabelProps } from '@/types/AriaLabelProps';
+import { AriaProps } from '@/types/AriaProps';
 import { DataTestProps } from '@/types/DataTestType';
-import { PropsWithChildren, SetStateAction } from 'react';
+import { PropsWithChildren } from 'react';
 
 export enum ButtonTypeEnum {
     Button = 'button',
@@ -15,7 +15,7 @@ export type WrapperButtonProps = {
     buttonName?: string;
     onClickFx?: (...args: unknown[]) => unknown;
 } & DataTestProps &
-    AriaLabelProps;
+    AriaProps;
 
 export default function WrapperButton({
     id,

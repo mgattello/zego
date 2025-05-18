@@ -1,4 +1,4 @@
-import { AriaLabelProps } from '@/types/AriaLabelProps';
+import { AriaProps } from '@/types/AriaProps';
 import { DataTestProps } from '@/types/DataTestType';
 import { PropsWithChildren } from 'react';
 
@@ -13,7 +13,7 @@ export type WrapperFormProps = {
     formAction: (formData: FormData) => void | Promise<void>;
     autoComplete?: AutoCompleteEnum;
 } & DataTestProps &
-    AriaLabelProps;
+    AriaProps;
 
 export default function WrapperForm({
     id,
