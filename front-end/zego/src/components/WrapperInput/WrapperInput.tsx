@@ -1,6 +1,6 @@
 import { AriaProps } from '@/types/AriaProps';
 import { DataTestProps } from '@/types/DataTestType';
-import { ChangeEvent } from 'react';
+import { StlyeProps } from '@/types/StlyleProps';
 
 export enum InputTypeEnum {
     Text = 'text',
@@ -32,41 +32,37 @@ export type WrapperInputProps = {
     inputPlaceHolder?: string;
     inputName: string;
     required: boolean;
-    inputValue: string | number | undefined;
     inputType: InputTypeEnum;
     inputListId?: string;
     inputList?: string[];
-    onChangeFx: (event: ChangeEvent<HTMLInputElement>) => void;
 } & DataTestProps &
-    AriaProps;
+    AriaProps &
+    StlyeProps;
 
 export default function WrapperInput({
     id,
     inputPlaceHolder = '',
     inputName = '',
     required = true,
-    inputValue,
     inputType,
     inputListId,
     inputList,
-    dataTestId = 'test',
     ariaLabelledBy,
     ariaDescribedBy,
     ariaLabel,
-    onChangeFx,
+    classes,
+    dataTestId = 'test',
 }: WrapperInputProps) {
     return (
         <>
             <input
                 list={inputListId}
-                className="m-2 py-2 px-3 text-base w-full h-10 bg-white rounded-xl"
+                className={`${classes ? classes : 'm-2 py-2 px-3 text-base w-auto h-10 bg-white rounded-xl'}`}
                 id={id}
                 type={inputType}
                 placeholder={inputPlaceHolder}
                 name={inputName}
                 required={required}
-                value={inputValue}
-                onChange={onChangeFx}
                 aria-labelledby={ariaLabelledBy}
                 aria-describedby={ariaDescribedBy}
                 aria-label={ariaLabel}

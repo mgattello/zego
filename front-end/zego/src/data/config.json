@@ -1,9 +1,10 @@
 {
     "version": "1.0.0",
-    "config": {
+    "form": {
         "id": "form-insurance",
         "formName": "onboardingQuote",
-        "autoComplete": "on",
+        "title": "Choose the type of insurance you need",
+        "autoComplete": "On",
         "layout": [
             {
                 "type": "label",
@@ -19,7 +20,7 @@
                     "inputName": "car-insurance",
                     "inputType": "radio",
                     "propertiesOf": "input",
-                    "required": true
+                    "required": false
                 }
             },
             {
@@ -36,7 +37,7 @@
                     "inputName": "car-deliver-insurance",
                     "inputType": "radio",
                     "propertiesOf": "input",
-                    "required": true
+                    "required": false
                 }
             },
             {
@@ -53,7 +54,17 @@
                     "inputName": "private-hire-insurance",
                     "inputType": "radio",
                     "propertiesOf": "input",
-                    "required": true
+                    "required": false
+                }
+            },
+            {
+                "type": "button",
+                "properties": {
+                    "id": "button-submit",
+                    "formId": "form-insurance",
+                    "buttonType": "submit",
+                    "buttonName": "button-submit-for-quote",
+                    "buttonText": "Get quote"
                 }
             }
         ]

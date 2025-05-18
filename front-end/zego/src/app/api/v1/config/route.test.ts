@@ -11,7 +11,7 @@ describe('/api/v1/config GET', () => {
 
         expect(response.status).toBe(200);
         expect(responseBody).toHaveProperty('version', '1.0.0');
-        expect(responseBody).toHaveProperty('config');
+        expect(responseBody).toHaveProperty('form');
         expect(() => ConfigGetZodSchema.parse(responseBody)).not.toThrow();
     });
 
@@ -33,20 +33,20 @@ describe('/api/v1/config GET', () => {
         expect(() => ConfigGetZodSchema.parse(responseBody)).toThrow();
     });
 
-    it('throws when config format does not exist', async () => {
+    it('throws when form format does not exist', async () => {
         const response = await GET();
         const responseBody = await response.json();
 
-        responseBody.config = {};
+        responseBody.form = {};
 
         expect(() => ConfigGetZodSchema.parse(responseBody)).toThrow();
     });
 
-    it('throws when config format does not follow schema', async () => {
+    it('throws when form format does not follow schema', async () => {
         const response = await GET();
         const responseBody = await response.json();
 
-        responseBody.config = {
+        responseBody.form = {
             message: 'test',
         };
 

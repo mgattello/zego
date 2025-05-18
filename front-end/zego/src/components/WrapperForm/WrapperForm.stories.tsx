@@ -1,8 +1,8 @@
 import { Meta, StoryFn } from '@storybook/react';
 import WrapperForm from './WrapperForm';
-import { TestWrapperInput } from '@/utils/testHelpers';
 import WrapperButton from '../WrapperButton/WrapperButton';
 import WrapperLabel from '../WrapperLabel/WrapperLabel';
+import WrapperInput, { InputTypeEnum } from '../WrapperInput/WrapperInput';
 
 export default {
     title: 'Components/WrapperForm',
@@ -24,7 +24,13 @@ FormPrimary.args = {
     children: (
         <>
             <WrapperLabel labelFor="input-test">Test</WrapperLabel>
-            <TestWrapperInput />
+            <WrapperInput
+                id="input-test"
+                inputPlaceHolder="Test"
+                inputName="test"
+                required={true}
+                inputType={InputTypeEnum['Text']}
+            />
             <WrapperButton id="button-test">Submit</WrapperButton>
         </>
     ),
