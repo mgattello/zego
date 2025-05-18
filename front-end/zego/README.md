@@ -150,6 +150,7 @@ The excercise was concluded without CI and Docker as tests where run during the 
 - implement a database instead of the JSON
 - implement CI and run unit tests and E2E before merging
 - create docker image to run application locally and test in CI
+- avoid using localhost:3000 as BASE_URL and use env files.
 
 ## Getting Started
 
