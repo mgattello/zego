@@ -1,4 +1,5 @@
-import { DataTestType } from '@/types/DataTestType';
+import { AriaLabelProps } from '@/types/AriaLabelProps';
+import { DataTestProps } from '@/types/DataTestType';
 import { SetStateAction } from 'react';
 
 export enum InputTypeEnum {
@@ -35,15 +36,9 @@ export type WrapperInputProps = {
     inputType: InputTypeEnum;
     inputListId?: string;
     inputList?: string[];
-    /**
-     * Use when the label is visually present but not using <label>. i.e.:
-     *
-     * <span id="label-username">Username</span>
-     * <input ... aria-labbelledby="label-username" name="username"/>
-     */
-    labelledBy?: string;
     onChangeFx: () => React.Dispatch<SetStateAction<string>>;
-} & DataTestType;
+} & DataTestProps &
+    AriaLabelProps;
 
 export default function WrapperInput({
     id,
@@ -55,7 +50,9 @@ export default function WrapperInput({
     inputListId,
     inputList,
     dataTestId = 'test',
-    labelledBy,
+    ariaLabelledBy,
+    ariaDescribedBy,
+    ariaLabel,
     onChangeFx,
 }: WrapperInputProps) {
     return (
@@ -70,7 +67,9 @@ export default function WrapperInput({
                 required={required}
                 value={inputValue}
                 onChange={onChangeFx}
-                aria-labelledby={labelledBy}
+                aria-labelledby={ariaLabelledBy}
+                aria-describedby={ariaDescribedBy}
+                aria-label={ariaLabel}
                 data-testid={`wrapper-input-${dataTestId}`}
             />
             {inputListId && inputList ? (

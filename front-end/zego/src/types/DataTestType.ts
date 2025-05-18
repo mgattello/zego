@@ -1,3 +1,3 @@
-export type DataTestType = {
+export type DataTestProps = {
     dataTestId?: string;
 };

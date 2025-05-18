@@ -7,7 +7,7 @@ export default {
     parameters: {
         docs: {
             description: {
-                component: 'A controlled input component.',
+                component: 'A controlled label component.',
             },
         },
     },

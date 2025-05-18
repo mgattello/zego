@@ -1,7 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import WrapperButton from './WrapperButton';
-import { SetStateAction } from 'react';
 
 describe('WrapperButton', () => {
     it('renders the button', () => {
