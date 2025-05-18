@@ -1,9 +1,10 @@
 export type AriaLabelProps = {
     /**
-     * Use when the label is visually present but not using <label>. i.e.:
+     * <input>: use it instead of a <label> when you're using non-standard layouts or custom UI that makes <label for="..."> impractical.
      *
-     * <span id="label-username">Username</span>
-     * <input ... aria-labbelledby="label-username" name="username"/>
+     * <button>: use it when the button doesn’t have visible text but has a label nearby (e.g., an icon button with a hidden text label):
+     *
+     * <form>: use it when the form’s title is outside the form, or you want to associate a visible label with the form explicitly.
      */
     ariaLabelledBy?: string;
     /**
